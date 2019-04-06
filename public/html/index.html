@@ -31,22 +31,6 @@
         </ul>
       </div>
     </nav>
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="/">
-        <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-      </a>
-    </nav> -->
-    <!-- <div class="container-fluid">
-      <div class="row mt-4">
-        <div class="col-sm-12 col-md-6 offset-md-3">
-          <div class="jumbotron">
-            <img class="img-fluid" src="./static/images/computer.jpg">
-            <h1 class="display-4">This is a brand new screen!</h1>
-            <p class="lead">This is screen includes bootstrap, fontawesome, jquery, and links to your own custom js and css files!</p>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="jumbotron text-center">
       <h1 class="display-3">Let's Study!</h1>
       <p class="lead">Coordinating study group meetings just got easier.</p>
@@ -58,12 +42,12 @@
         </div>
         <div class="col-md-6">
           <div class="text-center">
-            <button type="button" class="btn btn-primary" style="width: 175px;">Create A Group</button>
-            <button type="button" class="btn btn-primary" style="width: 175px;">Join A Group</button>
+            <button type="button" id="create-btn" class="btn btn-primary" style="width: 175px;">Create A Group</button>
+            <button type="button" id="join-btn" class="btn btn-primary" style="width: 175px;">Join A Group</button>
           </div>
           <br>
 
-          <div id="createGroup">
+          <div id="create-group">
             <form>
               <fieldset>
                 <div class="form-group">
@@ -80,14 +64,14 @@
                 </div>
               </fieldset>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                <button type="button" id="create-submit" class="btn btn-primary btn-block">Submit</button>
               </div>
               <br>
               <br>
             </form>
           </div>
 
-          <div id="joinGroup">
+          <div id="join-group">
             <form>
               <fieldset>
                 <div class="form-group">
@@ -100,14 +84,14 @@
                 </div>
               </fieldset>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                <button type="button" id="join-submit" class="btn btn-primary btn-block">Submit</button>
               </div>
               <br>
               <br>
             </form>
           </div>
 
-          <div id="addMemBtn" class="text-center">
+          <div id="add-mem-btn" class="text-center">
             <button type="button" class="btn btn-primary" style="width: 175px;">Add Members</button>
           </div>
           <br>
@@ -125,7 +109,7 @@
                 </div>
               </fieldset>
               <div class="text-center">
-                <button type="submit" class="btn btn-primary btn-block">Add Member</button>
+                <button type="button" id="add-mem-submit" class="btn btn-primary btn-block">Add Member</button>
               </div>
               <br>
               <br>
@@ -133,7 +117,46 @@
           </div>
 
           <div id="current-members">
-            <h1>test</h1>
+
+            <table class="table table-hover table-striped text-center">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col" colspan="3" class="text-center">Current Members</th>
+                </tr>
+              </thead>
+              <thead class="thead-secondary">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-light">
+                  <th scope="row">1</th>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+                <tr class="table-light">
+                  <th scope="row">2</th>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+                <tr class="table-light">
+                  <th scope="row">3</th>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row">
+              <div class="col">
+                <div id="current-member-name"></div>
+              </div>
+              <div class="col">
+                <div id="current-member-email"></div>
+              </div>
+            </div>
           </div>
 
         </div>
