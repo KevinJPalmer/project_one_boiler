@@ -10,38 +10,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-WTtvlZJeRyCiKUtbQ88X1x9uHmKi0eHCbQ8irbzqSLkE0DpAZuixT5yFvgX0CjIu" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/style.css">
   </head>
 
   <body>
-      <div style="display: none">
-          <input id="pac-input"
-             class="controls"
-             type="text"
-             placeholder="Enter a location">
-       </div>
-       <div id="map"></div>
-       <div id="infowindow-content">
-          <span id="place-name" class="title"></span><br>
-          <strong>Place ID:</strong> <span id="place-id"></span><br>
-          <span id="place-address"></span>
-       </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-
-      
-     <nav class="navbar">
-      <a class="navbar-brand" href="/">
-        <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
-      </a>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Instructions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <div class="container-fluid">
-      <div class="row mt-4">
-        <div class="col-sm-12 col-md-6 offset-md-3">
-          <div class="jumbotron">
-            <img class="img-fluid" src="./static/images/computer.jpg">
-            <h1 class="display-4">This is a brand new screen!</h1>
-            <p class="lead">This is screen includes bootstrap, fontawesome, jquery, and links to your own custom js and css files!</p>
+    <div class="jumbotron text-center">
+      <h1 class="display-3">Let's Study!</h1>
+      <p class="lead">Coordinating study group meetings just got easier.</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div style="display: none">
+            <input id="pac-input"
+               class="controls"
+               type="text"
+               placeholder="Enter a location">
+         </div>
+         <div id="map"></div>
+         <div id="infowindow-content">
+            <span id="place-name" class="title"></span><br>
+            <strong>Place ID:</strong> <span id="place-id"></span><br>
+            <span id="place-address"></span>
+         </div>
+        </div>
+        <div class="col-md-6">
+          <div class="text-center">
+            <button type="button" id="create-btn" class="btn btn-primary" style="width: 175px;">Create A Group</button>
+            <button type="button" id="join-btn" class="btn btn-primary" style="width: 175px;">Join A Group</button>
           </div>
+          <br>
+
+          <div id="create-group">
+            <form>
+              <fieldset>
+                <div class="form-group">
+                  <label for="new-group-name">Name your group</label>
+                  <input type="text" class="form-control" id="new-group-name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <label for="new-password">Create a password</label>
+                  <input type="password" class="form-control" id="new-password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="verify-password">Reenter your password</label>
+                  <input type="password" class="form-control" id="verify-password" placeholder="Password">
+                </div>
+              </fieldset>
+              <div class="text-center">
+                <button type="button" id="create-submit" class="btn btn-primary btn-block">Submit</button>
+              </div>
+              <br>
+              <br>
+            </form>
+          </div>
+
+          <div id="join-group">
+            <form>
+              <fieldset>
+                <div class="form-group">
+                  <label for="reg-group-name">Group Name</label>
+                  <input type="text" class="form-control" id="reg-group-name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <label for="reg-password">Password</label>
+                  <input type="password" class="form-control" id="reg-password" placeholder="Password">
+                </div>
+              </fieldset>
+              <div class="text-center">
+                <button type="button" id="join-submit" class="btn btn-primary btn-block">Submit</button>
+              </div>
+              <br>
+              <br>
+            </form>
+          </div>
+
+          <div id="add-mem-btn" class="text-center">
+            <button type="button" class="btn btn-primary" style="width: 175px;">Add Members</button>
+          </div>
+          <br>
+
+          <div id="add-member">
+            <form>
+              <fieldset>
+                <div class="form-group">
+                  <label for="new-member-name">Member Name</label>
+                  <input type="text" class="form-control" id="new-member-name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <label for="new-member-email">Email</label>
+                  <input type="email" class="form-control" id="new-member-email" placeholder="Email">
+                </div>
+              </fieldset>
+              <div class="text-center">
+                <button type="button" id="add-mem-submit" class="btn btn-primary btn-block">Add Member</button>
+              </div>
+              <br>
+              <br>
+            </form>
+          </div>
+
+          <div id="current-members">
+
+            <table class="table table-hover table-striped text-center">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col" colspan="3" class="text-center">Current Members</th>
+                </tr>
+              </thead>
+              <thead class="thead-secondary">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-light">
+                  <th scope="row">1</th>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+                <tr class="table-light">
+                  <th scope="row">2</th>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+                <tr class="table-light">
+                  <th scope="row">3</th>
+                  <td>Column content</td>
+                  <td>Column content</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="row">
+              <div class="col">
+                <div id="current-member-name"></div>
+              </div>
+              <div class="col">
+                <div id="current-member-email"></div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
