@@ -54,3 +54,24 @@ $("#add-mem-submit").click(function() {
   //hide form once member is added to list
   $("#add-member").hide();
 });
+
+var APIKey = "e992da56e11487f3a9bfbf4bc4469dcc";
+            // Here we are building the URL we need to query the database
+            var queryURL = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=" + [APIKey];
+            // Here we run our AJAX call to the OpenWeatherMap API
+            $.ajax({
+              url: queryURL,
+              method: "GET"
+            })
+              // We store all of the retrieved data inside of an object called "response"
+              .then(function(response) {
+                // Log the queryURL
+                console.log(queryURL);
+                // Log the resulting object
+                console.log(response);
+                // Transfer content to HTML
+                $(".city").html("<h1>" + response.name + " Weather Details</h1>");
+                $(".wind").text("Wind Speed: " + response.wind.speed);
+                $(".humidity").text("Humidity: " + response.main.humidity);
+                $(".temp").text("Temperature (F) " + response.main.temp);
+              })
