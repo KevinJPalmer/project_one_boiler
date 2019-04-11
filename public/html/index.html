@@ -38,7 +38,30 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
+          <h4>Find a location:</h4>
+          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+          <div id="map"></div>
+          <br>
+          <h4>What's the weather looking like?</h4>
+          <div id="city"></div>
+          <div id="wind"></div>
+          <div id="humidity"></div>
+          <div id="temp"></div>
 
+          <div id="weatherApi">
+            <form>
+                <fieldset>
+                  <label for="search-city">Weather Search (city)</label>
+                  <input type="text" class="form-control" id="search-city" placeholder="search">
+                  <div class="text-center">
+                      <button type="submit" id="submit-search" class="btn btn-primary btn-block">Submit</button>
+                  </div>
+              </fieldset>
+              <br>
+              <br>
+            </form>
+          </div>
+          
         </div>
         <div class="col-md-6">
           <div class="text-center">
@@ -90,28 +113,6 @@
               <br>
             </form>
           </div>
-          
-          <div id="city"></div>
-          <div id="wind"></div>
-          <div id="humidity"></div>
-          <div id="temp"></div>
-
-          <div id="weatherApi">
-            <form>
-                <fieldset>
-                  <label for="search-city">Weather Search (city)</label>
-                  <input type="text" class="form-control" id="search-city" placeholder="search">
-                <div class="text-center">
-                    <button type="submit" id="submit-search" class="btn btn-primary btn-block">Submit</button>
-                </div>
-              <br>
-              <br>
-        </form>
-        </div>
-          
-          
-            
-
 
           <div id="add-mem-btn" class="text-center">
             <button type="button" class="btn btn-primary" style="width: 175px;">Add Members</button>
@@ -139,7 +140,6 @@
           </div>
 
           <div id="current-members">
-
             <table class="table table-hover table-striped text-center">
               <thead class="thead-dark">
                 <tr>
@@ -188,6 +188,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="test3.js"></script>
+
+<!--     <script src="test3.js"></script> -->
+
+    <script src="./static/javascript/scripts.js" defer></script>
+    <script src="./static/javascript/map-API.js" defer></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCEhCXnxk6jqczkGUZOL-MUqVwnBsXq0E&libraries=places&callback=initMap">
+    </script>
   </body>
 </html>

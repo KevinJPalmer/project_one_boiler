@@ -54,6 +54,7 @@ $(document).ready(() => {
     // hide form once member is added to list
     $('#add-member').hide();
   });
+  
   function weatherAPI(city) {
     const APIKey = 'e992da56e11487f3a9bfbf4bc4469dcc';
     // Here we are building the URL we need to query the database
