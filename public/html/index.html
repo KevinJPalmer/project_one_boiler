@@ -1,8 +1,5 @@
 <!DOCTYPE html>
   <head>
-      <title>place finder</title>
-      <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-      <meta charset="utf-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Project One</title>
@@ -13,7 +10,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-WTtvlZJeRyCiKUtbQ88X1x9uHmKi0eHCbQ8irbzqSLkE0DpAZuixT5yFvgX0CjIu" crossorigin="anonymous">
     <link rel="stylesheet" href="./static/css/style.css">
   </head>
-
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -42,18 +38,15 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div style="display: none">
-            <input id="pac-input"
-               class="controls"
-               type="text"
-               placeholder="Enter a location">
-         </div>
-         <div id="map"></div>
-         <div id="infowindow-content">
-            <span id="place-name" class="title"></span><br>
-            <strong>Place ID:</strong> <span id="place-id"></span><br>
-            <span id="place-address"></span>
-         </div>
+          <h4>Find a location:</h4>
+          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+          <div id="map"></div>
+          <br>
+          <h4>What's the weather looking like?</h4>
+          <div class="city"></div>
+          <div class="wind"></div>
+          <div class="humidity"></div>
+          <div class="temp"></div>
         </div>
         <div class="col-md-6">
           <div class="text-center">
@@ -105,15 +98,6 @@
               <br>
             </form>
           </div>
-          <div class="city"></div>
-          <div class="wind"></div>
-          <div class="humidity"></div>
-          <div class="temp"></div>
-          
-         
-          
-            
-
 
           <div id="add-mem-btn" class="text-center">
             <button type="button" class="btn btn-primary" style="width: 175px;">Add Members</button>
@@ -141,7 +125,6 @@
           </div>
 
           <div id="current-members">
-
             <table class="table table-hover table-striped text-center">
               <thead class="thead-dark">
                 <tr>
@@ -190,8 +173,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="./static/javascript/scripts.js" async defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCEhCXnxk6jqczkGUZOL-MUqVwnBsXq0E&libraries=places&callback=initMap" async defer></script>
-    
+    <script src="./static/javascript/scripts.js" defer></script>
+    <script src="./static/javascript/map-API.js" defer></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCEhCXnxk6jqczkGUZOL-MUqVwnBsXq0E&libraries=places&callback=initMap">
+    </script>
   </body>
 </html>
