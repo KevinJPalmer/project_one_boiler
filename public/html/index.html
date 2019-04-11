@@ -8,7 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-WTtvlZJeRyCiKUtbQ88X1x9uHmKi0eHCbQ8irbzqSLkE0DpAZuixT5yFvgX0CjIu" crossorigin="anonymous">
-    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="styletest3.css">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -43,10 +43,25 @@
           <div id="map"></div>
           <br>
           <h4>What's the weather looking like?</h4>
-          <div class="city"></div>
-          <div class="wind"></div>
-          <div class="humidity"></div>
-          <div class="temp"></div>
+          <div id="city"></div>
+          <div id="wind"></div>
+          <div id="humidity"></div>
+          <div id="temp"></div>
+
+          <div id="weatherApi">
+            <form>
+                <fieldset>
+                  <label for="search-city">Weather Search (city)</label>
+                  <input type="text" class="form-control" id="search-city" placeholder="search">
+                  <div class="text-center">
+                      <button type="submit" id="submit-search" class="btn btn-primary btn-block">Submit</button>
+                  </div>
+              </fieldset>
+              <br>
+              <br>
+            </form>
+          </div>
+          
         </div>
         <div class="col-md-6">
           <div class="text-center">
@@ -173,6 +188,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!--     <script src="test3.js"></script> -->
+
     <script src="./static/javascript/scripts.js" defer></script>
     <script src="./static/javascript/map-API.js" defer></script>
     <script async defer
