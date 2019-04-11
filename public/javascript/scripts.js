@@ -1,15 +1,15 @@
 // Initialize Firebase
-var config = {
-  apiKey: "AIzaSyBlFEOMRTnca0sfKoHwvktXhWfD_W5P2Io",
-  authDomain: "project-1-db.firebaseapp.com",
-  databaseURL: "https://project-1-db.firebaseio.com",
-  projectId: "project-1-db",
-  storageBucket: "project-1-db.appspot.com",
-  messagingSenderId: "28286838580"
+const config = {
+  apiKey: 'AIzaSyBlFEOMRTnca0sfKoHwvktXhWfD_W5P2Io',
+  authDomain: 'project-1-db.firebaseapp.com',
+  databaseURL: 'https://project-1-db.firebaseio.com',
+  projectId: 'project-1-db',
+  storageBucket: 'project-1-db.appspot.com',
+  messagingSenderId: '28286838580',
 };
 firebase.initializeApp(config);
 
-var database = firebase.database();
+const database = firebase.database();
 
 let map;
 let input;
@@ -98,15 +98,15 @@ $('#join-btn').click(() => {
 
 $('#create-submit').click(() => {
   // firebase code to check group availability
-console.log($('#new-group-name').val().trim());
-console.log($('#new-password').val().trim());
-console.log($('#verify-password').val().trim());
+  // console.log($('#new-group-name').val().trim());
+  // console.log($('#new-password').val().trim());
+  // console.log($('#verify-password').val().trim());
 
-var groupData = {
-  groupName:$('#new-group-name').val().trim(),
-  groupPassword:$('#verify-password').val().trim(),
-};
-database.ref('group').push(groupData)
+  const groupData = {
+    groupName: $('#new-group-name').val().trim(),
+    groupPassword: $('#verify-password').val().trim(),
+  };
+  database.ref('group').push(groupData);
   // firebase code to add credentials to database
 
   // show and hide necessary fields
@@ -118,19 +118,19 @@ database.ref('group').push(groupData)
 
 $('#join-submit').click(() => {
   // firebase code to check credentials
-database.ref('group').once('value').then(function(snapshot) {
-  console.log(Object.values(snapshot.val()));
+  database.ref('group').once('value').then((snapshot) => {
+    // console.log(Object.values(snapshot.val()));
 
-  var joinGroup = Object.values(snapshot.val());
-  var regGroupName = $('#reg-group-name').val().trim();
-  var regGroupPass = $('#reg-password').val().trim();
+    const joinGroup = Object.values(snapshot.val());
+    const regGroupName = $('#reg-group-name').val().trim();
+    const regGroupPass = $('#reg-password').val().trim();
 
-  for (var i=0; i< joinGroup.length; i++) {
-    if (joinGroup[i].groupName === regGroupName && joinGroup[i].groupPassword === regGroupPass){
-        console.log("There's a match")
-
-    }}
-});
+    for (let i = 0; i < joinGroup.length; i++) {
+      if (joinGroup[i].groupName === regGroupName && joinGroup[i].groupPassword === regGroupPass) {
+        // console.log("There's a match");
+      }
+    }
+  });
   // firebase code to update necessary fields
 
   // show and hide necessary fields
@@ -161,7 +161,7 @@ $.ajax({
   method: 'GET',
 })
 // We store all of the retrieved data inside of an object called "response"
-  .then(function(response) {
+  .then((response) => {
     // Log the queryURL
     // console.log(queryURL);
     // Log the resulting object
@@ -171,4 +171,4 @@ $.ajax({
     $('.wind').text(`Wind Speed: ${response.wind.speed}`);
     $('.humidity').text(`Humidity: ${response.main.humidity}`);
     $('.temp').text(`Temperature (F) ${response.main.temp}`);
-});
+  });
