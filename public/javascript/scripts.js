@@ -128,6 +128,15 @@ $('#join-submit').click(() => {
     for (let i = 0; i < joinGroup.length; i++) {
       if (joinGroup[i].groupName === regGroupName && joinGroup[i].groupPassword === regGroupPass) {
         // console.log("There's a match");
+        const groupTitle = $('<h1>').text(joinGroup[i].groupName)
+        const goBackBtn = $('<div class="btn btn-primary">')
+          .on('click', function(){ window.location = '/' })
+          .text('Go Back')
+        $('.container').empty()
+        $('.container').append(groupTitle, goBackBtn)
+      //  $('body').html($('<div>', {class: $'container'}));
+      } else {
+
       }
     }
   });
@@ -147,7 +156,11 @@ $('#add-mem-btn').click(() => {
 
 $('#add-mem-submit').click(() => {
   // firebase code to add members
-
+var addMember = {
+  memberName: $('#new-member-name').val().trim(),
+  memberEmail: $('#new-member-email').val().trim(),
+};
+database.ref('member-data').push(addMember);
   // hide form once member is added to list
   $('#add-member').hide();
 });
